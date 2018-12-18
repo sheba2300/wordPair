@@ -4,15 +4,14 @@ public class WordPairList {
     private ArrayList<WordPair> allPairs;
     public WordPairList(String[] words)
     {
-        ArrayList <WordPair> p = new ArrayList<WordPair>();
-        for(int x =0; x<words.length-1;x++)
+        allPairs = new ArrayList <WordPair>();
+        for(int i = 0;i<words.length-1;i++)
         {
-            for(int i =0;i<words.length; i++)
+            for(int j = i+1;j<words.length;j++)
             {
-                p.add(new WordPair(words[x],words[i]));
+                allPairs.add(new WordPair(words[i],words[j]));
             }
         }
-        allPairs =p;
     }
     public int numMatches()
     {
@@ -26,5 +25,19 @@ public class WordPairList {
             }
         }
         return count;
+    }
+    public String toString()
+    {
+        String out = "";
+
+        for(int i = 0; i<allPairs.size();i++)
+        {
+            out += "(" + allPairs.get(i).getFirst() + ", " + allPairs.get(i).getSecond() + ")";
+            if(i != allPairs.size()-1)
+            {
+                out += ", ";
+            }
+        }
+        return out;
     }
 }
