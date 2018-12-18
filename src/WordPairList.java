@@ -14,7 +14,7 @@ public class WordPairList {
         }
         allPairs =p;
     }
-    public int numMartches()
+    public int numMatches()
     {
         int count =0;
         for(int i =0; i<allPairs.size();i++)
